@@ -26,25 +26,32 @@ def main():
     numeric = args.numeric
     sep = six.u(args.sep)
 
-    files = [open(filename, 'r') for filename in args.files]
-
-    if col != -1:
-        if numeric:
-            conv = float
+    files = None
+    try:
+        files = [open(filename, 'r') for filename in args.files]
+    
+        if col != -1:
+            if numeric:
+                conv = float
+            else:
+                conv = str
+    
+            tuples = (
+                ((conv(line.split(sep)[col]), line) for line in file)
+                for file in files
+            )
+            merged = heapq.merge(*tuples)
+            for key, line in merged:
+                sys.stdout.write(line)
         else:
-            conv = str
-
-        tuples = (
-            ((conv(line.split(sep)[col]), line) for line in file)
-            for file in files
-        )
-        merged = heapq.merge(*tuples)
-        for key, line in merged:
-            sys.stdout.write(line)
-    else:
-        merged = heapq.merge(*files)
-        for line in merged:
-            sys.stdout.write(line)
+            merged = heapq.merge(*files)
+            for line in merged:
+                sys.stdout.write(line)
+    finally:
+        if not files:
+            return
+        for f in files:
+            f.close()
 
 
 if __name__ == '__main__':
