@@ -11,7 +11,7 @@ import six
 
 
 __version__ = '0.1.0'
-__all__ = ['main', 'merge_lines', 'merge_tuples', '__version__']
+__all__ = ['main', '__version__']
 
 
 def main():
