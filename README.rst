@@ -33,7 +33,7 @@ Using tools like ``s3cmd`` and ``parallel`` together with ``merges``, you can
 incrementally merge and sort multiple log files on Amazon S3 simultaneously
 while downloading is in progress::
 
-    (Add example here)
+    ...Add example here...
 
 
 Installation
