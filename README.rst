@@ -8,7 +8,8 @@ merges: Merge multiple sorted files
 
 ``merges`` is a simple command-line tool merging multiple sorted files with
 small memory footprint. It is similar to `mergelog <http://mergelog.sourceforge.net/>`_
-which merges and sorts http log files from web servers behind round-robin DNS.
+which merges and sorts http log files from web servers behind round-robin DNS. The
+difference is that ``merges`` is not restricted to http log file format.
 
 Usage::
 
