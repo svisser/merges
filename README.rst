@@ -29,8 +29,9 @@ files are space-separated::
     merges -c 3 --sep ' ' a.log b.log > merged.log
 
 
-With ``s3cmd``, ``parallel`` and named pipes, you can download, merge and sort
-multiple log files simultaneously::
+Using tools like ``s3cmd`` and ``parallel`` together with ``merges``, you can
+incrementally merge and sort multiple log files on Amazon S3 simultaneously
+while downloading is in progress::
 
     (Add example here)
 
